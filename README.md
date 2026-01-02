@@ -11,13 +11,16 @@ This project was completed as part of the Ksense Technical Assessment. The goal 
 
 ## 🏗️ Project Structure
 
+```
 ksense-healthcare-assessment/
-├── apiClient.js # API communication with retry logic and error handling
-├── riskScoring.js # Risk calculation algorithms
-├── index.js # Main application entry point
-├── package.json # Project dependencies
-└── README.md # Documentation
-
+├── apiClient.js           # API communication with retry logic and error handling
+├── riskScoring.js         # Risk calculation algorithms
+├── index.js               # Main application entry point
+├── package.json           # Project dependencies
+├── package-lock.json      # Locked dependency versions
+├── .gitignore             # Git ignore rules
+└── README.md              # Documentation
+```
 ## 🚀 Setup & Installation
 
 ### Prerequisites
