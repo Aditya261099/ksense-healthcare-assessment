@@ -1,0 +1,15 @@
+{
+  "name": "ksense-healthcare-assessment",
+  "version": "1.0.0",
+  "description": "Healthcare API Risk Scoring Assessment for Ksense",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["healthcare", "api", "risk-scoring"],
+  "author": "Aditya Sai",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.2"
+  }
+}
