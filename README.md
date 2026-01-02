@@ -62,7 +62,7 @@ if (status === 429) {
 
 2. Risk Scoring Algorithm (riskScoring.js)
 Three-Factor Risk Assessment:
-```
+```javascript
 Blood Pressure Risk (0-3 points)
 Normal (Systolic <120 AND Diastolic <80): 0 points
 
@@ -72,7 +72,7 @@ Stage 1 (Systolic 130-139 OR Diastolic 80-89): 2 points
 
 Stage 2 (Systolic ≥140 OR Diastolic ≥90): 3 points
 ```
-```
+```javascript
 Temperature Risk (0-2 points)
 Normal (≤99.5°F): 0 points
 
@@ -80,7 +80,7 @@ Low Fever (99.6-100.9°F): 1 point
 
 High Fever (≥101.0°F): 2 points
 ```
-```
+```javascript
 Age Risk (0-2 points)
 Under 40: 0 points
 
@@ -92,25 +92,25 @@ Total Risk Score = BP Score + Temp Score + Age Score (0-7 possible)
 ```
 3. Data Quality Handling
 Validates and tracks invalid data:
-
+```javascript
 Missing or malformed blood pressure (e.g., "150/", "/90", "INVALID")
 
 Non-numeric temperature values (e.g., "TEMP_ERROR", null)
 
 Invalid age values (e.g., "unknown", non-numeric strings)
-
+```
 4. Alert Generation
 Three categories of alerts:
-
+```javascript
 High-Risk Patients: Total risk score ≥ 4
 
 Fever Patients: Temperature ≥ 99.6°F
 
 Data Quality Issues: Any invalid/missing data
-
+```
  Technical Highlights
 Error Handling Strategy
-```
+```javascript
 // Separate counters for rate limits vs. regular retries
 let attempt = 1;
 let rateLimitAttempts = 0;
@@ -121,7 +121,7 @@ while (attempt <= maxRetries || rateLimitAttempts < maxRateLimitRetries) {
 }
 ```
 Data Validation
-```
+```javascript
 // Robust blood pressure parsing
 function parseBP(bp) {
   if (!bp || typeof bp !== 'string') return null;
